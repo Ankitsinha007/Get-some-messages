@@ -1,0 +1,25 @@
+async function getitems(){
+
+const getbutter = new Promise((resolve, reject) =>{
+    setTimeout(()=> {
+        resolve("I got butter on popcorn");  //resolving the promise with value "Butter"
+    },1000)
+})
+
+const getcoldDrink = new Promise((resolve, reject) =>{
+    setTimeout(()=> {
+        resolve("I got butter on ColdDrink");  //resolving the promise with value "ColdDrink"
+    },1000)
+})
+
+let butter = await getbutter;
+let coldDrink = await getcoldDrink;
+
+Promise.all([butter, coldDrink]).then((value)=>{
+        console.log(value);
+});
+
+}
+
+getitems();
+
